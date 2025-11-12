@@ -1,0 +1,465 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Mi sitio</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static 'css/navstyles.css' %}">
+  <link rel="stylesheet" href="{% static 'css/index.css' %}">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    </head>
+    <!-- En index.html -->
+  <bo                                                                         dy>
+
+  {% include 'navbar.html' %}
+
+    <!-- Modulo Inicio -->
+    <div id="inicio" class="slider-box">
+      <ul>
+        <li>
+          <img src="{% static 'img/slider1.jpg' %}" alt="Vista lateral del interior del gym con shelfs y chica haciendo abs">
+          <div class="texto">
+            <h2>Entrena con enfoque</h2>
+            <p>En Athlos encontrarás el espacio y el equipo para centrarte en tus objetivos. Empieza con sesiones enfocadas en core y fuerza — cada repetición cuenta.</p>
+          </div>
+        </li>
+        <li>
+          <img src="{% static 'img/slider2.jpg' %}" alt="Chico y chica haciendo flexiones">
+          <div class="texto">
+            <h2>Supera tus límites</h2>
+            <p>Entrena en pareja o con nuestros coaches y descubre lo que eres capaz de lograr. Aquí cada empuje te acerca a tu mejor versión.</p>
+          </div>
+        </li>
+        <li>
+          <img src="{% static 'img/slider3.jpg' %}" alt="Chico con cuerdas y chica haciendo flexiones">
+          <div class="texto">
+            <h2>Entrena con intensidad</h2>
+            <p>Saltar, empujar, resistir: nuestras rutinas combinan cardio y fuerza para quemar calorías y construir resistencia. Siente la adrenalina, nota el progreso.</p>
+          </div>
+        </li>
+        <li>
+          <img src="{% static 'img/slider4.jpg' %}" alt="Dos chicos chocando puños con una pesa entre ellos mostrando compañerismo">
+          <div class="texto">
+            <h2>Comunidad que impulsa</h2>
+            <p>En Athlos construimos compañerismo y motivación. Aquí celebramos cada logro juntos — únete y forma parte de una comunidad que te impulsa.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <h2 class="titulo">¡Bienvenidos a Athlos!</h2>
+      <p class="parafo">En Athlos, transformamos la pasión por el fitness en resultados reales. Con entrenadores expertos, instalaciones de primera y una comunidad que te impulsa, te ayudamos a alcanzar tu mejor versión. Ya sea que estés comenzando o buscando nuevos desafíos, aquí encontrarás el ambiente y apoyo perfecto para convertir tus metas en logros. Tu camino hacia una vida más fuerte y saludable empieza aquí.</p>
+    </div>
+
+
+
+    <!-- Modulo servicios -->
+
+    <section id="servicios" class="design-section">
+    <h3 class="h3srv fade-in">Servicios</h3>
+      <div class="timeline">
+       <!-- Fila 1: izquierda -->
+        <div class="timeline-component timeline-content fade-in">
+           <div class="card-inner">
+            <div class="card-image">
+              <img src="{% static 'img/plan 1.jpg' %}" alt="Personal Training">
+            </div>
+            <div class="card-text">
+          <h3>Entrenamiento Personal (Personal Training)</h3>
+          <ul>
+            <li>Evaluación física inicial</li>
+            <li>Plan personalizado de ejercicios</li>
+            <li>Seguimiento nutricional básico</li>
+            <li>Ajuste continuo de objetivos</li>
+            <li>Sesiones one-on-one</li>
+          </ul>
+        </div>
+        </div>
+        </div>
+
+        <div class="timeline-middle fade-in"><div class="timeline-circle"></div></div>
+        <div></div>
+
+        <!-- Fila 2: derecha -->
+        <div></div>
+        <div class="timeline-middle fade-in"><div class="timeline-circle"></div></div>
+        <div class="timeline-component timeline-content fade-in">
+          <div class="card-inner">
+            <div class="card-image">
+              <img src="{% static 'img/grupales.jpg' %}" alt="Group Training">
+              </div>
+              <div class="card-text">
+          <h3>Clases Grupales Elite (Group Training)</h3>
+          <ul>
+            <li>HIIT (High-Intensity Interval Training)</li>
+            <li>CrossTraining</li>
+            <li>Boot Camp</li>
+            <li>Boxeo funcional</li>
+            <li>Grupos reducidos (max. 12 personas)</li>
+          </ul>
+        </div>
+        </div>
+        </div>
+
+        <!-- Fila 3: izquierda -->
+        <div class="timeline-component timeline-content fade-in">
+          <div class="card-inner">
+            <div class="card-image">
+              <img src="{% static 'img/integrales.jpg' %}" alt="Lifestyle Coaching">
+              </div>
+              <div class="card-text">
+          <h3>Transformación Integral (Lifestyle Coaching)</h3>
+          <ul>
+            <li>Asesoría nutricional completa</li>
+            <li>Plan de ejercicios personalizado</li>
+            <li>Coaching de hábitos saludables</li>
+            <li>Seguimiento por app</li>
+            <li>Reuniones mensuales de progreso</li>
+          </ul>
+        </div>
+        </div>
+        </div>
+        <div class="timeline-middle fade-in"><div class="timeline-circle"></div></div>
+        <div></div>
+
+        <!-- Fila 4: derecha -->
+        <div></div>
+        <div class="timeline-middle fade-in"><div class="timeline-circle"></div></div>
+        <div class="timeline-component timeline-content fade-in">
+          <div class="card-inner">
+            <div class="card-image">
+              <img src="{% static 'img/wellness.jpg' %}" alt="Recovery & Wellness">
+              </div>
+              <div class="card-text">
+          <h3>Recuperación y Bienestar (Recovery & Wellness)</h3>
+          <ul>
+            <li>Estiramientos asistidos</li>
+            <li>Masaje deportivo</li>
+            <li>Terapia de liberación miofascial</li>
+            <li>Técnicas de respiración</li>
+            <li>Asesoría en prevención de lesiones</li>
+          </ul>
+        </div>
+        </div>
+        </div>
+
+        <!-- Fila 5: izquierda -->
+        <div class="timeline-component timeline-content fade-in">
+          <div class="card-inner">
+            <div class="card-image">
+              <img src="{% static 'img/competencias.jpg' %}" alt="Entrenamiento Especializado">
+              </div>
+              <div class="card-text">
+          <h3>Athlos Team Training (Entrenamiento Especializado)</h3>
+          <ul>
+            <li>Preparación para competencias</li>
+            <li>Entrenamiento para deportes específicos</li>
+            <li>Programas de fuerza avanzada</li>
+            <li>Periodización del entrenamiento</li>
+            <li>Seguimiento de rendimiento</li>
+          </ul>
+        </div>
+        </div>
+        </div>
+        <div class="timeline-middle fade-in"><div class="timeline-circle"></div></div>
+        <div></div>
+      </div>
+    </section>
+
+    <script src="{% static 'js/navbar.js' %}"></script>
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        } else {
+          entry.target.classList.remove("visible");
+        }
+      });
+    }, {
+      threshold: 0.2
+    });
+
+    const fadeElements = document.querySelectorAll(".fade-in");
+    fadeElements.forEach(el => observer.observe(el));
+  });
+</script>
+
+<!-- Modulo planes -->
+<section id="planes" class="planes-section">
+  <h3 class="h3srv fade-in">Planes Athlos</h3>
+
+  <div class="swiper mySwiper">
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-wrapper">
+
+      <!-- Slide 1 - Plan Básico -->
+      <div class="swiper-slide">
+        <div class="icons">
+          <i class="fa-solid fa-star"></i>
+          <img src="{% static 'img/Athlos2.png' %}" alt="Logo Athlos">
+          <i class="fa-regular fa-heart"></i>
+        </div>
+        <div class="plan-content">
+          <div class="plan-txt">
+            <span>$120.000</span>
+            <h3>ATHLOS START</h3>
+            <ul class="plan-features">
+              <li>Acceso a gimnasio en horario regular</li>
+              <li>2 clases grupales por semana</li>
+              <li>Programa de iniciación (2 sesiones)</li>
+              <li>App de seguimiento básico</li>
+              <li>Ideal para principiantes</li>
+            </ul>
+          </div>
+          <div class="plan-img">
+            <img src="{% static 'img/planes1.jpg' %}" alt="Plan Básico">
+          </div>
+        </div>
+        <a href="#" class="btn-1">Comenzar ahora</a>
+      </div>
+
+      <!-- Slide 2 - Plan Intermedio -->
+      <div class="swiper-slide">
+        <div class="icons">
+          <i class="fa-solid fa-fire"></i>
+          <img src="{% static 'img/Athlos2.png' %}" alt="Logo Athlos">
+          <i class="fa-regular fa-heart"></i>
+        </div>
+        <div class="plan-content">
+          <div class="plan-txt">
+            <span>$220.000</span>
+            <h3>ATHLOS PLUS</h3>
+            <ul class="plan-features">
+              <li>Acceso total al gimnasio</li>
+              <li>Clases grupales ilimitadas</li>
+              <li>1 sesión mensual con coach</li>
+              <li>1 evaluación nutricional trimestral</li>
+              <li>App con seguimiento avanzado</li>
+            </ul>
+          </div>
+          <div class="plan-img">
+            <img src="{% static 'img/planes2.jpg' %}" alt="Plan Intermedio">
+          </div>
+        </div>
+        <a href="#" class="btn-1">Únete ahora</a>
+      </div>
+
+      <!-- Slide 3 - Plan Premium -->
+      <div class="swiper-slide">
+        <div class="icons">
+          <i class="fa-solid fa-crown"></i>
+          <img src="{% static 'img/Athlos2.png' %}" alt="Logo Athlos">
+          <i class="fa-regular fa-heart"></i>
+        </div>
+        <div class="plan-content">
+          <div class="plan-txt">
+            <span>$450.000</span>
+            <h3>ATHLOS ELITE</h3>
+            <ul class="plan-features">
+              <li>4 sesiones mensuales de entrenamiento personal</li>
+              <li>Nutricionista mensual</li>
+              <li>Recovery ilimitado</li>
+              <li>Acceso prioritario a clases</li>
+              <li>Casillero personal + Invitados ocasionales</li>
+            </ul>
+          </div>
+          <div class="plan-img">
+            <img src="{% static 'img/planes3.jpg' %}" alt="Plan Premium">
+          </div>
+        </div>
+        <a href="#" class="btn-1">Vuélvete Elite</a>
+      </div>
+
+      <!-- Slide 4 - Plan Transform -->
+      <div class="swiper-slide">
+        <div class="icons">
+          <i class="fa-solid fa-bolt"></i>
+          <img src="{% static 'img/Athlos2.png' %}" alt="Logo Athlos">
+          <i class="fa-regular fa-heart"></i>
+        </div>
+        <div class="plan-content">
+          <div class="plan-txt">
+            <span>$2.800.000</span>
+            <h3>ATHLOS TRANSFORM</h3>
+            <ul class="plan-features">
+              <li>Programa intensivo de 12 semanas</li>
+              <li>Entrenador personal 3x semana</li>
+              <li>Plan nutricional personalizado</li>
+              <li>Seguimiento semanal</li>
+              <li>Antes/después garantizado</li>
+            </ul>
+          </div>
+          <div class="plan-img">
+            <img src="{% static 'img/planes4.jpg' %}" alt="Plan Transform">
+          </div>
+        </div>
+        <a href="#" class="btn-1">Transfórmate</a>
+      </div>
+
+      <!-- Slide 5 - Plan Corporativo -->
+      <div class="swiper-slide">
+        <div class="icons">
+          <i class="fa-solid fa-buildings"></i>
+          <img src="{% static 'img/Athlos2.png' %}" alt="Logo Athlos">
+          <i class="fa-regular fa-heart"></i>
+        </div>
+        <div class="plan-content">
+          <div class="plan-txt">
+            <span>Desde $90.000</span>
+            <h3>ATHLOS TEAM</h3>
+            <ul class="plan-features">
+              <li>Planes personalizados para empresas</li>
+              <li>Horarios flexibles</li>
+              <li>Clases in-company opcionales</li>
+              <li>Seguimiento de resultados grupal</li>
+              <li>Eventos especiales para equipos</li>
+            </ul>
+          </div>
+          <div class="plan-img">
+            <img src="{% static 'img/planes5.jpg' %}" alt="Plan Corporativo">
+          </div>
+        </div>
+        <a href="#" class="btn-1">Contactar ventas</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- Módulo de contacto -->
+<section id="contacto" class="contact-section">
+  <h3 class="contact-title fade-in">Contáctanos</h3>
+  <p class="contact-subtitle fade-in">
+    ¿Tienes dudas o deseas reservar una clase? Escríbenos o visítanos — estaremos felices de ayudarte.
+  </p>
+
+  <div class="contact-grid fade-in">
+    <div class="contact-info">
+      <h4>Información</h4>
+      <p><i class="fa-solid fa-location-dot"></i> <strong>Dirección:</strong> Calle Principal 123, Ciudad</p>
+      <p><i class="fa-solid fa-phone"></i> <strong>Teléfono:</strong> +57 300 000 0000</p>
+      <p><i class="fa-solid fa-envelope"></i> <strong>Email:</strong> info@athlos.example</p>
+      <p><i class="fa-solid fa-clock"></i> <strong>Horario:</strong> Lun–Vie 6:00–22:00, Sáb 8:00–14:00</p>
+    </div>
+
+    <form class="contact-form" action="#" method="post" aria-label="Formulario de contacto">
+      <h4>Envíanos un mensaje</h4>
+      <label for="nombre">Nombre</label>
+      <input id="nombre" name="nombre" type="text" placeholder="Tu nombre" required>
+
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" placeholder="tu@correo.com" required>
+
+      <label for="mensaje">Mensaje</label>
+      <textarea id="mensaje" name="mensaje" rows="4" placeholder="Escribe tu mensaje..." required></textarea>
+
+      <!-- Botón Enviar Mensaje -->
+<button type="submit" class="btn-enviar" id="btnEnviar">Enviar mensaje</button>
+
+<!-- Script de alerta -->
+<script>
+document.getElementById("btnEnviar").addEventListener("click", function(event) {
+  event.preventDefault(); // Evita envío real
+  const alerta = document.createElement("div");
+  alerta.textContent = "✔ Mensaje enviado correctamente";
+  alerta.className = "alerta-envio";
+  document.body.appendChild(alerta);
+  setTimeout(() => alerta.remove(), 3000);
+});
+</script>
+    </form>
+  </div>
+</section>
+ 
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="footer-inner fade-in">
+    <div class="footer-brand">
+      <h4>Athlos</h4>
+      <p>Transformando la pasión por el fitness en resultados reales.</p>
+    </div>
+
+    <div class="footer-links">
+      <h5>Enlaces</h5>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-social">
+      <h5>Síguenos</h5>
+      <ul>
+        <li><a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i> Instagram</a></li>
+        <li><a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i> Facebook</a></li>
+        <li><a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i> TikTok</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© <span id="anio"></span> Athlos. Todos los derechos reservados.</p>
+    <a class="back-to-top" href="#inicio">Volver arriba ↑</a>
+  </div>
+</footer>
+
+<!-- Script: Año dinámico y animación -->
+<script>
+  // Año dinámico
+  document.getElementById('anio').textContent = new Date().getFullYear();
+
+  // Efecto fade-in al hacer scroll
+  document.addEventListener("DOMContentLoaded", () => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add("visible");
+      });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll(".fade-in").forEach(el => observer.observe(el));
+  });
+</script>
+
+
+
+ <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    effect: "coverflow",
+    grabCursor: true,
+    centeredSlides: true,
+    initialSlide: 2,
+    slidesPerView: "auto",
+    loop: true,
+    speed: 600,
+    coverflowEffect: {
+      rotate: 0,
+      stretch: 0,
+      depth: 500,
+      modifier: 1,
+      slideShadows: true
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev"
+    }
+  });
+</script>
+
+
+</body>
+</html>

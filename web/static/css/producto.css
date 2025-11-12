@@ -1,0 +1,147 @@
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #111;
+      color: #fff;
+    }
+
+    /* ---------- SECCIÓN DE PRODUCTOS ---------- */
+    .productos-container {
+      max-width: 1100px;
+      margin: 100px auto 60px; /* dejar espacio para navbar fijo */
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+      padding: 0 20px;
+    }
+
+    .producto-card {
+      background-color: #000000;
+      color: #ffffff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .producto-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    }
+
+    .producto-imagen img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+
+    .producto-info {
+      padding: 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .producto-info h2 {
+      color: #ffffff;
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+
+    .producto-info p {
+      color: #ccc;
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    .producto-precio {
+      font-size: 18px;
+      font-weight: 700;
+      color: #e78d26;
+      margin-bottom: 15px;
+    }
+
+    .producto-btn {
+      background-color: #111;
+      color: #fff;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.18s ease;
+      display: inline-flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .producto-btn:hover {
+      background-color: #222;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+    }
+
+    /* ---------- BOTÓN VOLVER AL INICIO ---------- */
+    .btn-inicio {
+      display: block;
+      width: fit-content;
+      margin: 40px auto 60px;
+      background-color: #e78d26;
+      color: #111;
+      border: none;
+      padding: 12px 28px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .btn-inicio:hover {
+      background-color: #ffb868;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    }
+
+    /* Botón para ir al carrito (en la página de productos) */
+    .btn-ir-carrito {
+      display: block; /* block so margin auto centers it */
+      width: fit-content;
+      margin: 18px auto 8px;
+      background-color: #e78d26;
+      color: #111;
+      border: none;
+      padding: 10px 20px;
+      font-size: 15px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 700;
+      text-decoration: none;
+      text-align: center;
+    }
+
+    .btn-ir-carrito:hover { background-color: #ffb868; transform: translateY(-2px); }
+
+    /* Dark alert variant (match carrito) */
+    .alerta-envio.alerta-dark {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #111; /* same dark box as cart */
+      color: #fff;
+      padding: 12px 18px;
+      border-radius: 8px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+      z-index: 9999;
+      animation: aparecer 0.18s ease, desaparecer 0.18s ease 2.7s forwards;
+    }
+
+    @keyframes aparecer { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes desaparecer { to { opacity: 0; transform: translateY(15px); } }

@@ -1,0 +1,148 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrito de Compras - Athlos</title>
+  <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="{% static 'css/navstyles.css' %}">
+  <!-- Bootstrap CSS (for navbar) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/carrito.css' %}">
+
+ 
+</head>
+<body>
+
+  <!-- ---------- HEADER ---------- -->
+  {% include 'navbar.html' %}
+  <script src="{% static 'js/navbar.js' %}"></script>
+
+  <!-- Bootstrap JS (bundle includes Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- ---------- SECCIÓN CARRITO ---------- -->
+  <div class="carrito">
+    <h1>Tu Carrito de Compras</h1>
+    <div id="productos-carrito"></div>
+    <div class="carrito-total" id="total"></div>
+    <button class="btn-comprar" id="finalizarCompra">Finalizar compra</button>
+  </div>
+
+  <script>
+    // 🔸 Función para mostrar alerta amarilla
+    function mostrarAlerta(mensaje) {
+      const alerta = document.createElement("div");
+      alerta.textContent = mensaje;
+      alerta.className = "alerta-envio";
+      document.body.appendChild(alerta);
+      setTimeout(() => alerta.remove(), 3000);
+    }
+
+    // 🔸 Cargar carrito desde localStorage
+    function cargarCarrito() {
+      const carrito = JSON.parse(localStorage.getItem('cart')) || [];
+      const contenedor = document.getElementById('productos-carrito');
+      const total = document.getElementById('total');
+
+      contenedor.innerHTML = "";
+      let totalCompra = 0;
+
+      if (carrito.length === 0) {
+        contenedor.innerHTML = "<p style='text-align:center; color:#777;'>Tu carrito está vacío.</p>";
+        total.innerHTML = "";
+        return;
+      }
+
+      carrito.forEach((producto, index) => {
+        totalCompra += producto.price * producto.qty;
+
+        const item = document.createElement('div');
+        item.classList.add('producto-card');
+        item.innerHTML = `
+          <div class="producto-imagen">
+            <img src="${producto.image}" alt="${producto.name}">
+          </div>
+          <div class="producto-info">
+            <h2>${producto.name}</h2>
+            <div style="display:flex; align-items:center; gap:10px; margin-top:6px;">
+              <label style="color:#b4b4b4; font-size:14px;">Cantidad:</label>
+              <input class="cantidad-input" type="number" min="1" value="${producto.qty}" onchange="actualizarCantidad(${index}, this.value)" style="width:70px; padding:6px; border-radius:6px; border:1px solid #333; background:#111; color:#fff;" />
+            </div>
+            <div class="producto-precio">$${(producto.price * producto.qty).toLocaleString()}</div>
+          </div>
+          <button class="producto-btn" onclick="eliminarProducto(${index})"><i class="fas fa-trash"></i> Eliminar</button>
+        `;
+        contenedor.appendChild(item);
+      });
+
+      total.textContent = "Total: $" + totalCompra.toLocaleString();
+    }
+
+    // 🔸 Eliminar producto del carrito
+    function eliminarProducto(index) {
+      let carrito = JSON.parse(localStorage.getItem('cart')) || [];
+      carrito.splice(index, 1);
+      localStorage.setItem('cart', JSON.stringify(carrito));
+      cargarCarrito();
+  mostrarAlerta("Producto eliminado del carrito");
+    }
+
+    // 🔸 Actualizar cantidad de un producto en el carrito
+    function actualizarCantidad(index, nuevaCantidad) {
+      let qty = parseInt(nuevaCantidad, 10);
+      if (isNaN(qty) || qty < 1) qty = 1;
+      const carrito = JSON.parse(localStorage.getItem('cart')) || [];
+      if (carrito[index]) {
+        carrito[index].qty = qty;
+        localStorage.setItem('cart', JSON.stringify(carrito));
+        cargarCarrito();
+        mostrarAlerta('Cantidad actualizada');
+      }
+    }
+
+    // 🔸 Confirmación personalizada al finalizar compra
+    document.getElementById('finalizarCompra').addEventListener('click', () => {
+      const overlay = document.createElement('div');
+      overlay.className = 'confirmacion-compra';
+      overlay.innerHTML = `
+        <div class="confirmacion-contenido">
+          <p>¿Deseas finalizar tu compra?</p>
+          <div class="confirmacion-botones">
+            <button id="btnConfirmar" class="btn-confirmar">Sí, finalizar</button>
+            <button id="btnCancelar" class="btn-cancelar">No, cancelar</button>
+          </div>
+        </div>
+      `;
+      document.body.appendChild(overlay);
+
+      const btnConfirmar = document.getElementById('btnConfirmar');
+      const btnCancelar = document.getElementById('btnCancelar');
+
+      btnConfirmar.addEventListener('click', () => {
+        overlay.remove();
+        localStorage.removeItem('cart');
+        cargarCarrito();
+        mostrarAlerta("Gracias por tu compra. Redirigiendo al inicio...");
+        setTimeout(() => window.location.href = '{% url "index" %}', 1200);
+      });
+
+      btnCancelar.addEventListener('click', () => {
+        overlay.remove();
+        mostrarAlerta("Compra cancelada");
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          overlay.remove();
+          mostrarAlerta("Compra cancelada");
+        }
+      });
+    });
+
+    cargarCarrito();
+  </script>
+</body>
+</html>

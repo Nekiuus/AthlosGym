@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,500&display=swap');
+
+.nav_links li,
+.nav_links li a,
+.nav_links li button{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  color: white;
+  text-decoration: none;
+  list-style: none;
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+}
+
+header {
+  position: fixed;            /* Fija el header en la parte superior */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  display: flex ; 
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 100px;
+  background-color: rgba(0, 0, 0, 0.459);
+  z-index: 999;               /* Asegura que esté por encima de todo */
+}
+
+.logo{
+    height: 45px;
+    cursor: pointer;
+    margin-right: auto; /*Para que el logo se quede a la izquierda*/
+    display: inline-block;
+}
+
+/* Ensure navbar images (logo, cart) are visible and sized correctly when using the Bootstrap navbar */
+.navbar .logo, .navbar-brand .logo {
+  height: 40px; /* override if needed */
+  width: auto;
+  display: inline-block;
+}
+
+.navbar .right-controls img, .cart-btn img {
+  height: 20px;
+  width: auto;
+  display: inline-block;
+}
+
+.nav_links{
+    display: inline-block; /*Para que los elementos dentro del nav_links se alineen en línea*/
+    padding: 0px 20px; 
+}
+
+.nav_links li{
+  /* Use inline-flex so the link content is vertically centered inside the header row.
+     Mobile @media rules below will set display:block for small screens, so this
+     won't break the stacked mobile menu. */
+  display: inline-flex;
+  align-items: center;
+  padding: 0px 20px;
+}
+
+.nav_links li a{
+  transition: all 0.3s ease 0s; /*Para que el cambio de color sea suave*/
+  /* Ensure anchor content is centered vertically within the 80px header */
+  display: inline-flex;
+  align-items: center;
+  height: 80px;
+  line-height: normal; /* avoid baseline shifts */
+}
+
+.nav_links li a:hover{
+    color: #e78d26; /*Color naranja al pasar el ratón por encima*/
+}
+
+.cta button{
+    background-color: #e78d26;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: 2px solid #e78d26;
+    cursor: pointer;
+    transition: all 0.3s ease 0s; /*Para que el cambio de color sea suave*/
+}
+
+.cta button:hover{
+    background-color: transparent;
+    color: white;
+}
+
+.logo-text {
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 12px; /* Espacio entre logo y texto */
+   margin-right: auto;
+  
+}
+
+.h3srv {
+    color: white;
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 30px;
+}
+
+.cart-btn {
+    position: relative;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    background: none;
+    border: none;
+    outline: none;
+    margin-left: 20px;
+}
+
+.cart-btn img {
+    width: 40px;
+    height: 40px;
+}
+
+/*mobile menu*/
+/* === HAMBURGER BUTTON === */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: auto;
+  z-index: 1000;
+}
+
+/* === MOBILE NAV === */
+@media (max-width: 768px) {
+  header {
+    padding: 0 20px;
+    justify-content: space-between;
+  }
+
+  .nav_links {
+    position: absolute;
+    top: 80px;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    padding: 20px 0;
+  }
+
+  .nav_links li {
+    display: block;
+    padding: 12px 0;
+  }
+
+  .cta, .cart-btn {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+ .nav_links.active {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+}
